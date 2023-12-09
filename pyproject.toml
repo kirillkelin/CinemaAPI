@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "cinemaapi"
+version = "0.1.0"
+description = ""
+authors = ["kirillkelin <kelinkirill@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.104.1"
+uvicorn = {extras = ["standart"], version = "^0.24.0.post1"}
+sqlalchemy = {extras = ["asyncio"], version = "^2.0.23"}
+pydantic = {extras = ["email"], version = "^2.5.2"}
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
+black = "^23.11.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
