@@ -2,7 +2,7 @@ import uuid
 from datetime import date
 from typing import Optional
 
-from sqlalchemy import ForeignKey, String
+from sqlalchemy import String
 from sqlalchemy.orm import Mapped, mapped_column
 
 from src.infrastructure.db.database import Base
@@ -16,3 +16,4 @@ class Films(Base):
     description: Mapped[Optional[str]] = mapped_column(String(2000))
     release_date: Mapped[date]
     duration: Mapped[int]
+    in_cinemas: Mapped[bool] = mapped_column(default=True)
