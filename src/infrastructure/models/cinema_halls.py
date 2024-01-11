@@ -1,7 +1,7 @@
 from enum import Enum
 
 from sqlalchemy import ForeignKey
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from src.infrastructure.db.database import Base
 
@@ -22,3 +22,8 @@ class CinemaHalls(Base):
     rows_count: Mapped[int]
     seats_per_row: Mapped[int]
     branch_office_id: Mapped[int] = mapped_column(ForeignKey("branch_offices.id"))
+
+    film_sessions: Mapped[list["FilmSessions"]] = relationship(
+        back_populates="cinema_hall"
+    )
+    branch_office: Mapped["BranchOffices"] = relationship(back_populates="cinema_halls")
