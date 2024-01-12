@@ -5,11 +5,11 @@ from typing import Optional
 from sqlalchemy import String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from src.infrastructure.db.database import Base
+from src.infrastructure.db.base import Base
 
 
-class Films(Base):
-    __tablename__ = "films"
+class Film(Base):
+    __tablename__ = "film"
 
     id: Mapped[uuid.UUID] = mapped_column(primary_key=True, default=uuid.uuid4)
     directors: Mapped[list[str]] = mapped_column(String(255))
