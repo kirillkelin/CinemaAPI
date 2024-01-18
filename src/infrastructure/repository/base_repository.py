@@ -1,18 +1,10 @@
 from sqlalchemy import select, insert
 from sqlalchemy.ext.asyncio import AsyncSession
-
+from src.infrastructure.db.base import Base
 from src.infrastructure.models import Film
 
 
 class BaseRepository:
-    # def __init__(self, model):
-    #     self.model = model
-    #
-    # async def get_all(self, session: AsyncSession):
-    #     query = select(self.model).select_from(self.model)
-    #     result = await session.execute(query)
-    #     return result.scalars().all()
-
     model = None
 
     @classmethod

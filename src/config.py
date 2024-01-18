@@ -8,6 +8,7 @@ class Settings(BaseSettings):
     DB_PASS: str = "postgres"
     DB_NAME: str = "cinema_app"
     DB_ECHO: bool = False
+    origins: list[str] = ["http://localhost:3000"]
 
     @property
     def get_database_url(self):
