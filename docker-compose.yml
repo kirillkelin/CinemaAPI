@@ -49,6 +49,21 @@ services:
     networks:
       - db
 
+  backend:
+    image: cinema_image
+    container_name: fastapi_backend
+    build:
+      context: .
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+    ports:
+      - "8000:80"
+    networks:
+      - db
+    command: bash start.sh
+
 volumes:
   cinemadb-data:
   pgadmin-data:
