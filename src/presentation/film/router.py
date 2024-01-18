@@ -37,5 +37,4 @@ async def add_film(
     film_service: FilmService = Depends(film_service_scope),
     session: AsyncSession = Depends(database.get_session),
 ):
-    pass
-    # return await film_service.
+    return await film_service.add_film(session=session, film=film)
