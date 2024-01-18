@@ -12,11 +12,11 @@ class Film(Base):
     __tablename__ = "film"
 
     id: Mapped[uuid.UUID] = mapped_column(primary_key=True, default=uuid.uuid4)
-    name: Mapped[str]
-    directors: Mapped[str]
+    title: Mapped[str]
+    director: Mapped[str]
     description: Mapped[Optional[str]] = mapped_column(String(2000))
     release_date: Mapped[date]
     duration: Mapped[int]
-    in_cinemas: Mapped[bool] = mapped_column(default=True)
+    is_in_cinemas: Mapped[bool] = mapped_column(default=True)
 
     film_sessions: Mapped[list["FilmSession"]] = relationship(back_populates="film")
