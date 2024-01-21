@@ -6,12 +6,12 @@ from pydantic import BaseModel
 
 
 class Film(BaseModel):
-    name: str
-    directors: str
+    title: str
+    director: str
     description: Optional[str]
     release_date: date
     duration: int
-    in_cinemas: bool = True
+    is_in_cinemas: bool = True
 
     class Config:
         from_attributes = True

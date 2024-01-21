@@ -20,10 +20,10 @@ class FilmService:
     async def add_film(self, session: AsyncSession, film: Film):
         result = await self.repository.add(
             session=session,
-            name=film.name,
-            directors=film.directors,
+            title=film.title,
+            director=film.director,
             description=film.description,
             release_date=film.release_date,
             duration=film.duration,
-            in_cinemas=film.in_cinemas,
+            is_in_cinemas=film.is_in_cinemas,
         )
